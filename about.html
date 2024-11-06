@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEU</title>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap">
+  <link rel="icon" href="images/WhatsApp Image 2024-10-31 at 1.03.24 PM.jpeg">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">KILAKARAI ERATHA URAVUGAL</div>
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="achieve.html">Achievement</a></li>
+    </ul>
+</nav>
+
+    <img src="images/header.jpg" alt="content" class="full-screen">
+    <script src="script.js"></script>
+  <div class="subheading">
+    <div>
+    <h1>About us:</h1></div>
+    <p>
+      We are excited to share our story with you. Our blood donation organization
+      was established on March 23, 2020, in the heart of Keelakarai.
+      Since then, our dedicated team has worked tirelessly to make a meaningful impact in the lives of those in need.
+      Every blood donation is a chance to bring hope and healing to patients facing critical health challenges.
+
+      We believe in the power of community and invite you to join us in our mission to save lives.
+      Together, we can make a difference. Below, you'll find information about our committed
+      team members who are at the forefront of this important work.
+      
+    </p>
+  </div> 
+
+  <div class="slider-container">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about1.jpg" alt="Image 1">
+          </div>
+          <div class="text-container">
+            <p>AHMED KABEER</p>
+            <p>Founder</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about2.jpg" alt="Image 2">
+          </div>
+          <div class="text-container">
+            <p>JIYAVUL HAQ</p>
+            <p>President</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about3.jpg" alt="Image 3">
+          </div>
+          <div class="text-container">
+            <p>MOHAMED HATHIL</p>
+            <P>Chief coordinator</P>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about4.jpg" alt="Image 4">
+          </div>
+          <div class="text-container">
+            <p>MUFLIHA</p>
+            <p>Information Coordinator</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about5.jpg" alt="Image 5">
+          </div>
+          <div class="text-container">
+            <p>SAHATHATH</p>
+            <p>Secretary</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-container">
+            <img src="images/about6.jpg" alt="Image 6">
+          </div>
+          <div class="text-container">
+            <p>AHMED SALIM</p>
+            <p>Treasurer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+ 
+  <div class="dots-container">
+    <span class="dot" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
+    <span class="dot" onclick="goToSlide(5)"></span>
+  </div>
+
+  <script>
+ 
+ let currentSlide = 0;
+
+function moveSlide(direction) {
+  const slider = document.querySelector('.slider');
+  const card = document.querySelector('.card');
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  
+  const cardWidth = card.offsetWidth + 40; 
+  const visibleCards = Math.floor(sliderWrapper.offsetWidth / cardWidth);
+  const totalCards = document.querySelectorAll('.card').length;
+
+  
+  const maxSlide = totalCards - visibleCards;
+
+  currentSlide += direction;
+  if (currentSlide < 0) currentSlide = 0;
+  if (currentSlide > maxSlide) currentSlide = maxSlide;
+
+  slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+  updateDots();
+}
+
+function goToSlide(slideIndex) {
+  const slider = document.querySelector('.slider');
+  const card = document.querySelector('.card');
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+
+  const cardWidth = card.offsetWidth + 40; 
+  const totalCards = document.querySelectorAll('.card').length;
+  const visibleCards = Math.floor(sliderWrapper.offsetWidth / cardWidth);
+  
+  
+  const maxSlide = totalCards - visibleCards;
+  
+  currentSlide = Math.min(slideIndex, maxSlide); 
+
+  slider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+  updateDots();
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+window.onload = updateDots;
+
+
+  </script>
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="contact-info">
+          <h4>Contact Us</h4>
+          <p>Email: <a href="mailto:info@example.com">kilakaraierathauravugal.com</a></p>
+          <p>Phone: <a href="tel:+123456789">+123 456 789</a></p>
+      </div>
+      <div class="social-media">
+          <h4>Follow Us</h4>
+          <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="quick-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="achieve.html">Achievement</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="copyright">
+      <p>&copy; 2024 Team7Troopers. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
