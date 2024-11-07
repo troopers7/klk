@@ -105,14 +105,23 @@ body {
     .achieve, .container1, .container2 {
         max-width: 600px;
     }
-    .container2 {
-        flex-direction: row;
-    }
-    .text-content {
-        width: 40%;
-        margin-left: 2vw;
-        margin-top: 0;
-    }
+    
+}
+@media (max-width: 768px) {
+  .container2 {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center; /* Center text on smaller screens */
+  }
+
+  .container2 img {
+      width: 80%; /* Adjust image width for better fit on smaller screens */
+      margin-bottom: 2vw;
+  }
+
+  .text-content {
+      width: 90%; /* Adjust text width to fit nicely */
+      margin-top: 1vw; /* Reduce top margin */
+  }
 }
 *{
     margin: 0;
@@ -167,8 +176,8 @@ body {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 50px;
+        left:200px;
         width: 100%;
         background-color: #333;
     }
@@ -241,7 +250,23 @@ body {
 .social-icon:hover {
   color: #ccc; 
 }
+.footer-container ul {
+  list-style-position:  disc; /* Positions bullets inside the content box */
+  margin: 0;
+  padding-left: 20px; /* Adjusts distance between bullets and text */
+}
 
+.footer-container li {
+  list-style-position: inside;
+  
+  align-items: center;
+ /* Adjust the spacing between bullet and text */
+  margin: 5px 0; /* Space between list items */
+   /* Adjust the spacing between bullet and text */
+   /* Space between list items */
+   text-indent: -20px; /* Aligns text closer to the bullet */
+  padding-left: 20px; /* Ensures bullet is kept in line with text */
+}
 
 .copyright {
   text-align: center;
@@ -251,12 +276,36 @@ body {
 
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: column;
-      align-items: center;
-  }
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.footer-container ul {
+  list-style-position: inside; /* Aligns bullets closer to text */
+  padding-left: 10px;
+}
 
-  .footer-container div {
-      text-align: center;
-      margin: 10px 0;
+.footer-container div {
+    
+    margin: 5px 0;
+}
+.footer-container li {
+    margin: 5px 0;
+    padding-left: 20px; /* Consistent padding for list items on mobile */
+}
+
+}
+@media (max-width: 768px) {
+  .full-screen {
+      height:  auto;
+      max-height: 50vh;/* Reduce height on phone view */
+  }
+}
+
+@media (max-width: 480px) {
+  .full-screen {
+      max-height: 30vh;
+      height: auto; /* Further reduce height on smaller phone view */
   }
 }

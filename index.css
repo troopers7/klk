@@ -50,7 +50,7 @@ font-family: Arial, sans-serif;
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: 0;
+      left: 200px;
       width: 100%;
       background-color: #333;
   }
@@ -61,6 +61,19 @@ font-family: Arial, sans-serif;
 
   .menu-icon {
       display: block;
+  }
+}
+@media (max-width: 768px) {
+  .full-screen {
+      height:  auto;
+      max-height: 50vh;/* Reduce height on phone view */
+  }
+}
+
+@media (max-width: 480px) {
+  .full-screen {
+      max-height: 30vh;
+      height: auto; /* Further reduce height on smaller phone view */
   }
 }
 body, html{
@@ -182,6 +195,23 @@ height: 100%;
   padding: 10px;
   border-top: 1px solid #ffffff;
 }
+.footer-container ul {
+  list-style-position:  disc; /* Positions bullets inside the content box */
+  margin: 0;
+  padding-left: 20px; /* Adjusts distance between bullets and text */
+}
+
+.footer-container li {
+  list-style-position: inside;
+  
+  align-items: center;
+ /* Adjust the spacing between bullet and text */
+  margin: 5px 0; /* Space between list items */
+   /* Adjust the spacing between bullet and text */
+   /* Space between list items */
+   text-indent: -20px; /* Aligns text closer to the bullet */
+  padding-left: 20px; /* Ensures bullet is kept in line with text */
+}
 
 @media (max-width: 768px) {
   .footer-container {
@@ -189,10 +219,20 @@ height: 100%;
       align-items: center;
   }
 
+  .footer-container ul {
+    list-style-position: inside; /* Aligns bullets closer to text */
+    padding-left: 10px;
+}
+
   .footer-container div {
-      text-align: center;
-      margin: 10px 0;
+      
+      margin: 5px 0;
   }
+  .footer-container li {
+      margin: 5px 0;
+      padding-left: 20px; /* Consistent padding for list items on mobile */
+}
+
 }
 
 
