@@ -166,6 +166,7 @@ height: 100%;
 .footer-container ul {
   margin: 5px 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .footer-container a {
