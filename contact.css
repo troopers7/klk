@@ -1,184 +1,309 @@
-
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body{
-font-family: Arial, sans-serif;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-}
-
-.navbar .logo {
-  color: white;
-  font-size: 24px;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-icon {
-      display: block;
-  }
-}
-
-
-body, html{
-height: 100%;
-
-.full-screen{
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-  display: block;
-}
-}
-
-
 body {
- 
-  
-  height: 100vh; 
-  margin: 0;
-  background-color: #f0f0f0; 
-}
-
-.contact-box {
-  width: 600px;
-  padding: 20px; 
-  border: 2px solid #333;
-  border-radius: 8px;
-  background-color: rgb(119, 114, 114); 
-  color: white; 
-  text-align: center;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s; 
-  align-items: center;
-  margin: 20px;
-  margin-left: 30%;
-  
-}
-
-
-@media (max-width: 600px) {
-  .contact-box {
-      width: 90%; 
-      max-width: 400px;
-      align-items: center;
-      
+    
+    
+    height: 100vh; 
+    margin: 0;
+    background-color: #f0f0f0; 
   }
-}
-
-
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-.footer-container div {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px;
-}
-
-.footer-container h4 {
-  margin-bottom: 10px;
-}
-
-.footer-container p,
-.footer-container ul {
-  margin: 5px 0;
-  padding: 0;
-}
-
-.footer-container a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0;
-}
-
-.footer-container a:hover {
-  text-decoration: underline;
-}
-
-.social-icon {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 24px;
-  color: white;    
-}
-
-.social-icon:hover {
-  color: #ccc; 
-}
-
-
-.copyright {
-  text-align: center;
-  padding: 10px;
-  border-top: 1px solid #444;
-}
-
-@media (max-width: 768px) {
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    
+  }
+  .nav-links a.active {
+    color: #f0a500; /* Change to your preferred color for active state */
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        row-gap: 0.5rem;
+        padding: 10px;
+        
+        left: 200px;
+        width: 100%;
+        background-color: #333;
+    }
+  
+    .nav-links.active {
+        display: flex;
+    }
+  
+    .menu-icon {
+        display: block;
+       
+    }
+    .nav-links a.active {
+      color: #f0a500; /* Change to your preferred color for active state */
+    }
+  }
+   
+  body, html{
+    height: 100%;
+    
+    .full-screen{
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+  }
+  
   .footer-container {
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
   }
-
+  
   .footer-container div {
-      text-align: center;
-      margin: 10px 0;
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
   }
-}
+  
+  .footer-container h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-container p,
+  .footer-container ul {
+    margin: 5px 0;
+    padding: 0;
+  }
+  
+  .footer-container a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0;
+  }
+  
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: white;    
+  }
+  
+  .social-icon:hover {
+    color: #ccc; 
+  }
+  
+  
+  .copyright {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+  .footer-container ul {
+    list-style-position:  disc; /* Positions bullets inside the content box */
+    margin: 0;
+    padding-left: 20px; /* Adjusts distance between bullets and text */
+  }
+  
+  .footer-container li {
+    list-style-position: inside;
+    
+    align-items: center;
+   /* Adjust the spacing between bullet and text */
+    margin: 5px 0; /* Space between list items */
+     /* Adjust the spacing between bullet and text */
+     /* Space between list items */
+     text-indent: -20px; /* Aligns text closer to the bullet */
+    padding-left: 20px; /* Ensures bullet is kept in line with text */
+  }
+     
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .footer-container ul {
+      list-style-position: inside; /* Aligns bullets closer to text */
+      padding-left: 10px;
+  }
+  
+    .footer-container div {
+        
+        margin: 5px 0;
+    }
+    .footer-container li {
+        margin: 5px 0;
+        padding-left: 20px; /* Consistent padding for list items on mobile */
+  }
+  
+  }
+  @media (max-width: 768px) {
+    .full-screen {
+        height:  auto;
+        max-height: 50vh;/* Reduce height on phone view */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .full-screen {
+        max-height: 30vh;
+        height: auto; /* Further reduce height on smaller phone view */
+    }
+  }
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;   /* Stretch the items to have equal height */
+    gap: 30px;              /* Space between the contact items */
+    padding: 40px;
+    flex-wrap: wrap;        /* Allow wrapping for smaller screens */
+  }
+  
+  /* Individual icon item styling */
+  .icon-item {
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;            /* Fixed width */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space the content evenly */
+    min-height: 250px;        /* Ensure equal height for all boxes */
+    transition: transform 0.3s ease-in-out;  /* Smooth hover effect */
+  }
+  
+  .icon-item:hover {
+    color: aqua;
+    transform: scale(1.05);    /* Slightly enlarge the item on hover */
+  }
+  
+  .icon-item i {
+    font-size: 40px;           /* Icon size */
+    color: black;            /* Icon color */
+    margin-bottom: 15px;
+  }
+  
+  .icon-item span {
+    display: block;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .details {
+    font-size: 18px;
+    color: black;            /* Detail text color */
+    margin: 5px 0;
+  }
+  
+  .contact-image {
+    display: flex;                 /* Use flexbox layout */
+    justify-content: center;       /* Center horizontally */
+    align-items: center;           /* Center vertically */
+    margin-top: 10px;
+    padding-bottom: 5px;
+    width: 100%;                   /* Ensure it takes up full width */
+    height: 100vh;                 /* Ensure it takes up full viewport height */
+  }
+  
+  .contact-image img {
+    width: 100%;
+    max-width: 550px;              /* Limit image size */
+    height: auto;                  /* Maintain aspect ratio */
+    border-radius: 8px;            /* Optional: add rounded corners to the image */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-image img:hover {
+    transform: scale(1.05);        /* Slight zoom-in effect on hover */
+  }
+  .frame{
+    
+    width: 100%;  
+    
+    height: auto;
+    display: flex;
+    justify-content: center;       /* Center horizontally */
+    align-items: center; 
+    margin-bottom: 10px;
+
+
+  }
+  @media (max-width: 768px) {
+
+   .contact-image img {
+    width: 100%;
+    max-width: 350px;              /* Limit image size */
+    height: auto;                  /* Maintain aspect ratio */
+    border-radius: 8px;            /* Optional: add rounded corners to the image */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
+  }
+  .frame{
+    
+    width: 100%;  
+    max-width: 350px;
+    height: auto;
+    display: flex;
+    justify-content: center;       /* Center horizontally */
+    align-items: center; 
+    padding-left: 10px;
+    margin-top: 20px;
+
+
+  }
+  .contact-image {
+    display: flex;                 /* Use flexbox layout */
+    justify-content: center;       /* Center horizontally */
+    align-items: center;           /* Center vertically */
+    margin-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;                   /* Ensure it takes up full width */
+    height: auto;                 /* Ensure it takes up full viewport height */
+  }}
