@@ -42,7 +42,12 @@ font-family: Arial, sans-serif;
   font-size: 24px;
   color: white;
   cursor: pointer;
+  
 }
+.nav-links a.active {
+  color: #f0a500; /* Change to your preferred color for active state */
+}
+
 
 @media (max-width: 768px) {
   .nav-links {
@@ -53,29 +58,42 @@ font-family: Arial, sans-serif;
       left: 200px;
       width: 100%;
       background-color: #333;
+      row-gap: 0.5rem;
+      padding: 10px;
+      
   }
 
   .nav-links.active {
       display: flex;
+      
+  }
+  .nav-links a.active {
+    color: #f0a500; /* Change to your preferred color for active state */
   }
 
   .menu-icon {
       display: block;
+      
   }
+  
 }
 @media (max-width: 768px) {
   .full-screen {
       height:  auto;
-      max-height: 50vh;/* Reduce height on phone view */
+      max-height: 50vh;
+      /* Reduce height on phone view */
+  }
+  .slideshow {
+    height: 50vh;
+    position: relative; 
+    /* Further adjust height for smaller screens */
+  }
+  .logo{
+    padding-top: 0px;
   }
 }
 
-@media (max-width: 480px) {
-  .full-screen {
-      max-height: 30vh;
-      height: auto; /* Further reduce height on smaller phone view */
-  }
-}
+
 body, html{
 height: 100%;
 
@@ -166,7 +184,7 @@ height: 100%;
 .footer-container ul {
   margin: 5px 0;
   padding: 0;
-  list-style-type: none;
+  
 }
 
 .footer-container a {
@@ -264,7 +282,7 @@ p {
 }
 
 .inner-header {
-  height:65vh;
+  height:50vh;
   width:100%;
   margin: 0;
   padding: 0;
@@ -331,6 +349,12 @@ p {
   h1 {
     font-size:24px;
   }
+  .inner-header {
+    height:30vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+  }
 }
 body{
   margin: 0;
@@ -339,5 +363,26 @@ body{
   background: url(https://cdn.wallscloud.net/converted/2305230990-rozovie-gori-LBJD-1920x1200-MM-100.jpg);
   background-size: cover;
 }
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
 
+.full-screen {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+  
+}
+
+.full-screen.active {
+  opacity: 1;
+}
 
