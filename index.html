@@ -15,16 +15,21 @@
         <div class="logo">KILAKARAI ERATHA URAVUGAL</div>
         <div class="menu-icon" id="menu-icon">&#9776;</div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class = "active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="service.html">Service</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="achieve.html">Achievement</a></li>
         </ul>
     </nav>
-            <img src="images/header.jpg" alt="content" class="full-screen">
+    <div class="slideshow">
+        <img src="images/header.jpg" alt="content" class="full-screen active">
+        <img src="images/header2.jpg" alt="content" class="full-screen">
+       
+    </div>
+    
         <script src="script.js"></script>
-
+       
 
     <main>
         <div class="logo">
@@ -79,10 +84,10 @@
             </div>
             <div class="social-media">
                 <h4>Follow Us</h4>
-                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://chat.whatsapp.com/IoDHZ4juSktESicfaDhCkp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/p/Kilakarai-Eratha-Uravugal-100089581914118/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kilakarai.eratha.uravugal?igsh=ODV2YnU1MTE3eGh6" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@kilakarai.eratha.uravugal?si=_HqBMG-5p2QfIMU-" class="social-icon"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="quick-links">
                 <h4>Quick Links</h4>
@@ -99,6 +104,24 @@
             <p style="color: white;">&copy; 2024 Team7Troopers. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        let currentIndex = 0;
+const images = document.querySelectorAll('.slideshow .full-screen');
+
+function showNextImage() {
+images[currentIndex].classList.remove('active');  // Hide the current image
+currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+images[currentIndex].classList.add('active');      // Show the next image
+}
+
+// Initial display of the first image
+images[currentIndex].classList.add('active');
+
+// Change image every 3 seconds (adjust as needed)
+setInterval(showNextImage, 3000);
+
+    </script>
+
     
 </body>
 </html>
