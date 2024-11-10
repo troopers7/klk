@@ -50,6 +50,9 @@ body {
   cursor: pointer;
   
 }
+.nav-links a.active {
+  color: #f0a500; /* Change to your preferred color for active state */
+}
 
 @media (max-width: 768px) {
   .nav-links {
@@ -57,6 +60,8 @@ body {
       flex-direction: column;
       position: absolute;
       top: 50px;
+      row-gap: 0.5rem;
+      padding: 10px;
       
       left: 200px;
       width: 100%;
@@ -70,6 +75,9 @@ body {
   .menu-icon {
       display: block;
      
+  }
+  .nav-links a.active {
+    color: #f0a500; /* Change to your preferred color for active state */
   }
 }
  
