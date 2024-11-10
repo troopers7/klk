@@ -1,71 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* General Reset */
+body {
+    
+    
+  height: 100vh; 
+  margin: 0;
+  background-color: #f0f0f0; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
   
-  body{
-  font-family: Arial, sans-serif;
-  
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-  }
-  
-  .navbar .logo {
-    color: white;
-    font-size: 24px;
-  }
-  
+}
+.nav-links a.active {
+  color: #f0a500; /* Change to your preferred color for active state */
+}
+
+@media (max-width: 768px) {
   .nav-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      row-gap: 0.5rem;
+      padding: 10px;
+      
+      left: 200px;
+      width: 100%;
+      background-color: #333;
   }
-  
-  .nav-links li {
-    margin: 0 15px;
+
+  .nav-links.active {
+      display: flex;
   }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-  }
-  
+
   .menu-icon {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
+      display: block;
+     
   }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-    }
-  
-    .nav-links.active {
-        display: flex;
-    }
-  
-    .menu-icon {
-        display: block;
-    }
+  .nav-links a.active {
+    color: #f0a500; /* Change to your preferred color for active state */
   }
-  
-  
-  body, html{
+}
+ 
+body, html{
   height: 100%;
   
   .full-screen{
@@ -74,103 +83,368 @@
     object-fit: cover;
     display: block;
   }
-  }
-  
-h1{
-    text-align: center;
 }
-.small-image{
-    text-align: center;
-    width: 40%;/*adjust with as need */
-    height: auto;
-    margin: 2%/* keep the original aspects ratio */
-}
-.position-container{
-    text-align: center;
-    position: relative;
-    height: auto;
-}
-
-  .name{
-    margin-top: 5%;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 .footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-  }
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.footer-container div {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-container h4 {
+  margin-bottom: 10px;
+}
+
+.footer-container p,
+.footer-container ul {
+  margin: 5px 0;
+  padding: 0;
+}
+
+.footer-container a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  color: white;    
+}
+
+.social-icon:hover {
+  color: #ccc; 
+}
+
+
+.copyright {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #444;
+}
+.footer-container ul {
+  list-style-position:  disc; /* Positions bullets inside the content box */
+  margin: 0;
+  padding-left: 20px; /* Adjusts distance between bullets and text */
+}
+
+.footer-container li {
+  list-style-position: inside;
   
+  align-items: center;
+ /* Adjust the spacing between bullet and text */
+  margin: 5px 0; /* Space between list items */
+   /* Adjust the spacing between bullet and text */
+   /* Space between list items */
+   text-indent: -20px; /* Aligns text closer to the bullet */
+  padding-left: 20px; /* Ensures bullet is kept in line with text */
+}
+   
+@media (max-width: 768px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 20px;
+      flex-direction: column;
+      align-items: center;
+      
+      
   }
-  
-  .footer-container div {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
-  }
-  
-  .footer-container h4 {
-    margin-bottom: 10px;
-  }
-  
-  .footer-container p,
   .footer-container ul {
-    margin: 5px 0;
-    padding: 0;
+    list-style-position: inside; /* Aligns bullets closer to text */
+    padding-left: 10px;
+}
+
+  .footer-container div {
+      
+      margin: 5px 0;
   }
-  
-  .footer-container a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0;
+  .footer-container li {
+      margin: 5px 0;
+      padding-left: 20px; /* Consistent padding for list items on mobile */
+}
+
+}
+@media (max-width: 768px) {
+  .full-screen {
+      height:  auto;
+      max-height: 50vh;/* Reduce height on phone view */
   }
-  
-  .footer-container a:hover {
-    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .full-screen {
+      max-height: 30vh;
+      height: auto; /* Further reduce height on smaller phone view */
   }
+}
   
-  .social-icon {
-    display: inline-block;
-    margin-right: 10px;
+
+.description-box {
+  
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #d0e3f2; /* Soft blue border */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  
+  }
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+
+  
+  }
+  .links{
+    padding: 20px;
     font-size: 24px;
-    color: white;    
-  }
-  
-  .social-icon:hover {
-    color: #ccc; 
-  }
-  
-  
-  .copyright {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    background-color: #fff; /* White background for the box */
+    border: 4px solid #d10b0b; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
     text-align: center;
-    padding: 10px;
-    border-top: 1px solid #444;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
+    max-width: 20%; /* Dark text */
+    }
+    .link{
+      display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 30vh;            /* Full viewport height */
+            margin: 0;
+            background-color: #f4f4f9; /* Light background color */
     }
   
-    .footer-container div {
-        text-align: center;
-        margin: 10px 0;
-    }
+  /* Header styling */
+  .description-box h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #003366; /* Dark blue */
+    text-align: center;
   }
   
-
-
-
+  /* Service list styling */
+  .service-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
   
+  /* Different colors for each item */
+  .service-list li {
+    font-size: 1.1em;
+    color: #003366; /* Text color */
+    padding: 12px 15px;
+    margin: 6px 0;
+    border-radius: 5px;
+    border: 1px solid #e0eaf5;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeIn 0.5s forwards;
+  }
   
+  /* Alternating background colors for better visual distinction */
+  .service-list li:nth-child(1) {
+    background-color: #fddde6; /* Light pink for Blood Organisation */
+    animation-delay: 0.1s;
+  }
+  .service-list li:nth-child(2) {
+    background-color: #e1f7d5; /* Light green for Ambulance Service */
+    animation-delay: 0.2s;
+  }
+  .service-list li:nth-child(3) {
+    background-color: #ffefc1; /* Light yellow for Accident Service */
+    animation-delay: 0.3s;
+  }
+  .service-list li:nth-child(4) {
+    background-color: #d6eaff; /* Light blue for Burial of Unclaimed Dead Bodies */
+    animation-delay: 0.4s;
+  }
+  .service-list li:nth-child(5) {
+    background-color: #ffd9e8; /* Light coral for Medical Help */
+    animation-delay: 0.5s;
+  }
+  .service-list li:nth-child(6) {
+    background-color: #e8e1ff; /* Light purple for Disaster Rescue */
+    animation-delay: 0.6s;
+  }
+  .service-list li:nth-child(7) {
+    background-color: #dfffe5; /* Light mint for Awareness */
+    animation-delay: 0.7s;
+  }
+  .service-list li:nth-child(8) {
+    background-color: #ffe9d6; /* Light orange for Ramadan Food Distribution */
+    animation-delay: 0.8s;
+  }
+  
+  /* Hover effect for each item */
+  .service-list li:hover {
+    transform: translateX(5px); /* Small shift for hover effect */
+    background-color: #cce7ff; /* Light blue hover color */
+    border-color: #99d6ff; /* Darker border on hover */
+  }
+  
+  /* Keyframes for list item fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+/* Container to hold images and center them */
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap the images into multiple rows */
+    justify-content: center; /* Center images horizontally */
+    gap: 20px; /* Space between images */
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Styling for each image item */
+.image-item {
+    width: 39%; /* Default to 3 images per row */
+    height: auto; /* Fixed height for each image */
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
+    animation: fadeInUp 1s forwards ease;
+}
+
+/* Image styling */
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the box without distortion */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to scale image on hover */
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding delay for sequential animations on each image */
+.image-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.image-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.image-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.image-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.image-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.image-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.image-item:nth-child(7) {
+    animation-delay: 0.7s;
+}
+.image-item:nth-child(8) {
+    animation-delay: 0.8s;
+}
+.image-item:nth-child(9) {
+    animation-delay: 0.9s;
+}
+.image-item:nth-child(10) {
+    animation-delay: 1s;
+}
+
+/* Responsive design for laptops and larger screens (3 images per row) */
+@media (min-width: 1024px) {
+    .image-item {
+        width: 30%; /* 3 images per row */
+    }
+
+}
+
+/* Responsive design for tablets and smaller devices (2 images per row) */
+@media (max-width: 1024px) {
+    .image-item {
+        width: 48%; /* 2 images per row */
+    }
+    .links{
+      padding: 5px;
+      font-size: 18px;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      background-color: #fff; /* White background for the box */
+      border: 2px solid #d10b0b; /* Green border */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      text-align: center;
+      max-width: 30%;
+      height: auto;
+       /* Dark text */
+      }
+      .link{
+        display: flex;
+              justify-content: center;  /* Center horizontally */
+              align-items: center;      /* Center vertically */
+              height: 20vh;            /* Full viewport height */
+              margin: 0;
+              background-color: #f4f4f9;
+              margin-top: 20px; /* Light background color */
+      }
+}
+
+/* Responsive design for mobile devices (1 image per row) */
+@media (max-width: 768px) {
+    .image-item {
+        width: 100%; /* 1 image per row */
+    }
+}
+
+/* Optional: to remove gaps on mobile */
+@media (max-width: 768px) {
+    .image-container {
+        gap: 10px;
+    }
+}
+
