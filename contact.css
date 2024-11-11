@@ -15,7 +15,7 @@ body {
   }
   
   .navbar .logo {
-    color: white;
+    color: rgb(255, 0, 17);
     font-size: 24px;
   }
   
@@ -306,4 +306,30 @@ body {
     padding-bottom: 10px;
     width: 100%;                   /* Ensure it takes up full width */
     height: auto;                 /* Ensure it takes up full viewport height */
-  }}
+  }
+  .icon-item i {
+    padding-top: 20px;
+    font-size: 20px;           /* Icon size */
+    color: black;            /* Icon color */
+    margin-bottom: 10px;
+  }
+  .icon-item {
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;            /* Fixed width */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space the content evenly */
+    min-height: 200px;        /* Ensure equal height for all boxes */
+    transition: transform 0.3s ease-in-out;  /* Smooth hover effect */
+  }
+  .details {
+    font-size: 15px;
+    color: black;            /* Detail text color */
+    margin: 3px 0;
+    object-fit: cover;
+  }
+  }
