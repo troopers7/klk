@@ -129,7 +129,7 @@ body {
     box-sizing: border-box;
   }
   
- 
+  
   
   .navbar {
     display: flex;
@@ -177,7 +177,7 @@ body {
         position: absolute;
         top: 50px;
         left:200px;
-        width: 100%;
+        width: 40%;
         background-color: #333;
         row-gap: 0.5rem;
       padding: 10px;
