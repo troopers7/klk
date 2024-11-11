@@ -17,7 +17,7 @@ font-family: Arial, sans-serif;
 }
 
 .navbar .logo {
-  color: white;
+  color:rgb(255, 0, 17);
   font-size: 24px;
 }
 
@@ -25,6 +25,8 @@ font-family: Arial, sans-serif;
   list-style: none;
   padding: 0;
   display: flex;
+  position: relative;
+  z-index: 1001;
 }
 
 .nav-links li {
@@ -60,6 +62,7 @@ font-family: Arial, sans-serif;
       background-color: #333;
       row-gap: 0.5rem;
       padding: 10px;
+      z-index: 1001;
       
   }
 
@@ -78,20 +81,59 @@ font-family: Arial, sans-serif;
   
 }
 @media (max-width: 768px) {
-  .full-screen {
-      height:  auto;
-      max-height: 50vh;
-      /* Reduce height on phone view */
-  }
-  .slideshow {
+  /* Remove margin and padding from the body and html to eliminate any unwanted space */
+  body, html {
+    margin: 0;
+    padding: 0;
     height: 50vh;
-    position: relative; 
-    /* Further adjust height for smaller screens */
   }
-  .logo{
-    padding-top: 0px;
+
+  /* Ensure the slideshow image takes 100% of the width and is properly displayed */
+  .slideshow {
+    width: 100%;
+    height: auto; 
+    max-height: 50vh;/* Ensure the slideshow has a max height of 50vh */
+    position: relative;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  /* Remove any padding or margins from the full-screen image */
+  .full-screen {
+    width: 100%;
+    height: auto; 
+    max-height: 50vh; /* Ensure it fills the height of the slideshow */
+    object-fit: cover;
+    position: absolute; /* Position it over the slideshow */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+  }
+
+  .full-screen.active {
+    opacity: 1;
+  }
+
+  /* Ensure the logo has no top or bottom margins/padding */
+  .logo {
+    margin: 0; /* Remove any margin that might be adding extra space */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically if needed */
+    position: relative;
+    z-index: 10; /* Ensure the logo is on top of the slideshow */
+  }
+
+  /* Make sure the logo image doesn't have extra space around it */
+  .logo img {
+    width: 100%;
+    max-width: 300px; /* Limit logo width */
+    object-fit: contain; /* Ensure logo scales properly */
   }
 }
+
 
 
 body, html{
@@ -102,6 +144,8 @@ height: 100%;
   height: 70vh;
   object-fit: cover;
   display: block;
+  margin: 0;
+    padding: 0;
 }
 }
 
